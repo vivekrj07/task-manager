@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Management App
 
-## Getting Started
+This is a simple **Task Management** web application built using **Next.js** with **React** and **Tailwind CSS**. It allows users to add, delete, edit, and search for tasks, as well as toggle task completion. The application also utilizes server-side actions to store task data in a JSON file.
 
-First, run the development server:
+## Features
+
+- Add new tasks with a title, description, and priority level (Low, Medium, High).
+- Edit existing tasks, including updating the task's details and priority.
+- Delete tasks from the task list.
+- Toggle task completion status (Mark tasks as completed or pending).
+- Search tasks by title or description.
+- Responsive layout with Tailwind CSS.
+- Task data persistence using file-based storage.
+
+## Tech Stack
+
+- **Next.js**: Server-side rendering and static site generation.
+- **React**: Frontend UI components.
+- **Tailwind CSS**: Styling and layout management.
+- **Node.js**: Server-side file system interaction.
+- **File-based storage**: Task data is stored in a `tasks.json` file.
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js (v18 or later)
+- npm or yarn (for installing dependencies)
+
+### Steps
+1. Clone the Repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/vivekrj07/task-manager.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the Project Directory:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+cd task-manager
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Install Dependencies:
 
-## Learn More
+```bash
+yarn install
+```
+4. Run the Development Server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app will be available at `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Sorting Tasks by Priority
 
-## Deploy on Vercel
+### Approach
+The app supports sorting tasks by their priority level, with priorities categorized as **High, Medium, and Low**. Tasks are sorted from highest priority to lowest.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Steps for Sorting:
+- **Client Request:** When the user interacts with dropdown, we sort the tasks array on client side.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Render Sorted List:** The sorted tasks are rendered in the TaskList component, allowing users to see their tasks ordered by priority.
